@@ -4,97 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricelist & Form Pembelian Robux - VILOG</title>
+  <!-- Import font Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #fff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      font-size: 13px;
+    }
+
     /* Pricelist */
     .category {
       max-width: 720px;
-      margin: 30px auto;
-      padding: 10px;
+      margin: 25px auto;
+      padding: 5px 12px;
     }
     .category h3 {
       text-align: center;
-      margin-bottom: 12px;
-      font-size: 18px;
-      color: #333;
-      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #2c3e50;
     }
     .pricelist-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 8px;
       justify-content: center;
-      font-family: sans-serif;
     }
     .price-box {
-      flex: 0 1 calc(33.33% - 12px);
+      flex: 0 1 calc(33.33% - 8px);
       background-color: #f9f9f9;
-      border: 2px solid #8296AD;
-      border-radius: 10px;
-      padding: 8px 4px;
+      border: 1px solid #d1d9e6;
+      border-radius: 8px;
+      padding: 6px 4px;
       text-align: center;
-      font-size: 12px;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      font-size: 11px;
+      font-weight: 500;
       color: #333;
       cursor: pointer;
       transition: 0.2s;
     }
     .price-box:hover {
-      background-color: #e3ebf5;
-      transform: scale(1.05);
+      background-color: #eef3fa;
+      border-color: #4a6fa1;
+      transform: scale(1.04);
     }
     .price-box span {
       display: block;
       font-weight: normal;
-      font-size: 9px;
+      font-size: 10px;
       color: #555;
       margin-top: 2px;
     }
 
     /* Form */
     .form-container {
-      max-width: 420px;
-      margin: 20px auto;
-      background: #f9f9f9;
-      border: 2px solid #8296AD;
-      border-radius: 12px;
-      padding: 20px;
-      font-family: sans-serif;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      max-width: 400px;
+      margin: 20px auto 40px;
+      background: #fafafa;
+      border: 1px solid #d1d9e6;
+      border-radius: 10px;
+      padding: 16px 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     .form-container h2 {
       text-align: center;
-      margin-bottom: 15px;
-      font-size: 18px;
-      color: #333;
+      margin-bottom: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #2c3e50;
     }
     .form-group {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     label {
-      font-size: 13px;
-      font-weight: bold;
+      font-size: 12px;
+      font-weight: 500;
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       color: #444;
     }
     input, select {
       width: 100%;
-      padding: 8px;
+      padding: 7px;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 13px;
+      border-radius: 6px;
+      font-size: 12px;
       box-sizing: border-box;
     }
     button {
       width: 100%;
-      padding: 10px;
+      padding: 9px;
       background: #4a6fa1;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       color: white;
-      font-size: 14px;
-      font-weight: bold;
+      font-size: 13px;
+      font-weight: 600;
       cursor: pointer;
       transition: 0.2s;
     }
@@ -105,7 +115,7 @@
     .notes {
       font-size: 11px;
       color: #666;
-      margin-top: 4px;
+      margin-top: 3px;
     }
   </style>
 </head>
@@ -213,7 +223,7 @@
         <label for="harga">Harga</label>
         <input type="text" id="harga" name="harga" readonly>
       </div>
-      <div style="text-align:center; margin: 20px 0;">
+      <div style="text-align:center; margin: 14px 0 6px;">
         <button type="button" id="btnWa">Pesan via WhatsApp</button>
       </div>
     </form>
@@ -263,15 +273,15 @@ document.getElementById("btnWa").addEventListener("click", function() {
   let harga = document.getElementById("harga").value;
 
   let pesan = `📋 *Order Robux VILOG* 📋%0A%0A` +
-              `👤 Nama: ${nama}%0A` +
-              `🎮 Username: ${username}%0A` +
-              `🔑 Password: ${password}%0A` +
-              `📌 V2L: ${v2l}%0A` +
+              `Nama: ${nama}%0A` +
+              `Username: ${username}%0A` +
+              `Password: ${password}%0A` +
+              `V2L: ${v2l}%0A` +
               (v2l === "ON" ? `➡️ Metode V2L: ${metodeV2L}%0A` : "") +
               (metodeV2L === "Backup Code" ? `🔐 Backup Code: ${backupCode}%0A` : "") +
-              `🏷️ Kategori: ${kategori}%0A` +
-              `💎 Nominal: ${nominal}%0A` +
-              `💰 Harga: ${harga}`;
+              `Kategori: ${kategori}%0A` +
+              `Nominal: ${nominal}%0A` +
+              `Harga: ${harga}`;
 
   let url = `https://wa.me/6283197962700?text=${pesan}`;
   window.open(url, "_blank");
