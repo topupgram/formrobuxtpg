@@ -94,6 +94,8 @@
       margin-bottom: 4px;
       color: #444;
     }
+
+    /* FIX: input & select biar gak jumbo */
     input, select {
       width: 100%;
       padding: 8px;
@@ -101,7 +103,25 @@
       border-radius: 8px;
       font-size: 12px;
       box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      line-height: 1.4;
+      background: #fff;
+      height: auto;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
     }
+
+    /* Panah di select */
+    select {
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='%23666'%20d='M2%200L0%202h4zm0%205L0%203h4z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      background-size: 8px 10px;
+      padding-right: 20px;
+    }
+
     button {
       width: 100%;
       padding: 10px;
