@@ -257,9 +257,7 @@ function isiForm(nominal, harga, kategori) {
   document.getElementById("nominal").value = nominal;
   document.getElementById("harga").value = "Rp" + new Intl.NumberFormat('id-ID').format(harga);
   document.getElementById("kategori").value = kategori;
-  
-    // Tambahan: auto scroll ke form
-  
+// Tambahan: auto scroll ke form
   document.getElementById("orderForm").scrollIntoView({ behavior: "smooth" });
 }
 
