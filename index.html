@@ -300,16 +300,16 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
   let nominal = document.getElementById("nominal").value;
   let harga = document.getElementById("harga").value;
 
-  let pesan = `📋 *Order Robux VILOG* 📋%0A%0A` +
-              `👤 Nama: ${nama}%0A` +
-              `🎮 Username: ${username}%0A` +
-              `🔑 Password: ${password}%0A` +
-              `📌 V2L: ${v2l}%0A` +
-              (v2l === "ON" ? `➡️ Metode V2L: ${metodeV2L}%0A` : "") +
-              (metodeV2L === "Backup Code" ? `🔐 Backup Code: ${backupCode}%0A` : "") +
-              `🏷️ Kategori: ${kategori}%0A` +
-              `💎 Nominal: ${nominal}%0A` +
-              `💰 Harga: ${harga}`;
+  let pesan = `*Order Robux VILOG* %0A%0A` +
+              `Nama: ${nama}%0A` +
+              `Username: ${username}%0A` +
+              `Password: ${password}%0A` +
+              `V2L: ${v2l}%0A` +
+              (v2l === "ON" ? `Metode V2L: ${metodeV2L}%0A` : "") +
+              (metodeV2L === "Backup Code" ? `Backup Code: ${backupCode}%0A` : "") +
+              `Kategori: ${kategori}%0A` +
+              `Nominal: ${nominal}%0A` +
+              `Harga: ${harga}`;
 
   let url = `https://wa.me/6283197962700?text=${pesan}`;
   window.open(url, "_blank");
